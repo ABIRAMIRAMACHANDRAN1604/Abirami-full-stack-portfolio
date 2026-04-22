@@ -1,0 +1,115 @@
+<header class="site-header">
+  <nav class="navbar">
+    <h1 class="logo">MyPortfolio</h1>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section id="home" class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Portfolio</p>
+      <h2>Hi, I'm <span>R Abirami</span></h2>
+      <p class="hero-text">
+        Aspiring full-stack developer building clean web experiences with Angular, Spring Boot, and SQL databases.
+      </p>
+      <div class="hero-actions">
+        <button type="button" (click)="scrollToSection('contact')">Hire Me</button>
+        <a href="assets/abirami-resume.pdf.pdf" target="_blank" rel="noreferrer">View Resume</a>
+        <a href="assets/abirami-cv.dox.docx" target="_blank" rel="noreferrer">View CV</a>
+        <a href="https://github.com/ABIRAMIRAMACHANDRAN1604" target="_blank" rel="noreferrer">GitHub</a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <img class="profile-photo" src="assets/abirami-photo.jpg.jpg" alt="Abirami Ramachandran">
+      <h3>Abirami Ramachandran</h3>
+      <p>Full-Stack Developer</p>
+      <span>Tenkasi, Tamil Nadu</span>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="section-heading">
+      <p>About</p>
+      <h2>Building practical software with care and consistency.</h2>
+    </div>
+    <div class="about-grid">
+      <p>
+        I’m <strong>Abirami Ramachandran</strong>, a motivated Computer Science student focused on full-stack development.
+        I enjoy creating user-friendly applications with <strong>Spring Boot, Angular, MySQL, HTML, CSS, and JavaScript</strong>.
+      </p>
+      <p>
+        My work includes academic management systems, responsive web interfaces, and database-driven applications that prioritize performance, maintainability, and accessibility.
+      </p>
+      <p>
+        I value teamwork, time management, and continuous learning. I’m eager to contribute through internships and real-world projects that create meaningful impact.
+      </p>
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <div class="section-heading">
+      <p>Skills</p>
+      <h2>Tools and technologies I use to build modern applications.</h2>
+    </div>
+    <div class="skills-grid">
+      <article class="skill-item" *ngFor="let skill of skills">{{ skill }}</article>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="section-heading">
+      <p>Projects</p>
+      <h2>Selected work that reflects my backend and frontend experience.</h2>
+    </div>
+    <div class="project-grid">
+      <article class="project-card" *ngFor="let project of projects">
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.description }}</p>
+        <p>{{ project.extra }}</p>
+        <a [href]="project.link" target="_blank" rel="noreferrer">View on GitHub</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact-section">
+    <div class="section-heading">
+      <p>Contact</p>
+      <h2>Let’s build something meaningful together.</h2>
+    </div>
+
+    <div class="contact-layout">
+      <div class="contact-info">
+        <p><strong>Phone:</strong> <a href="tel:+918122787551">+91 81227 87551</a></p>
+        <p><strong>Email:</strong> <a href="mailto:abiramii405@gmail.com">abiramii405@gmail.com</a></p>
+        <p><strong>Address:</strong> Elathur, Tenkasi-DT (PIN - 627803)</p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/abirami-ramachandran-b77810325/" target="_blank" rel="noreferrer">Profile</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/ABIRAMIRAMACHANDRAN1604" target="_blank" rel="noreferrer">ABIRAMIRAMACHANDRAN1604</a></p>
+        <p><strong>Resume:</strong> <a href="assets/abirami-resume.pdf.pdf" target="_blank" rel="noreferrer">Open Resume</a></p>
+        <p><strong>CV:</strong> <a href="assets/abirami-cv.dox.docx" target="_blank" rel="noreferrer">Open CV</a></p>
+      </div>
+
+      <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <input type="text" formControlName="name" placeholder="Your name">
+        <input type="email" formControlName="email" placeholder="Your email">
+        <input type="text" formControlName="subject" placeholder="Subject">
+        <textarea rows="5" formControlName="message" placeholder="Tell me about your project"></textarea>
+        <button type="submit" [disabled]="isSubmitting">
+          {{ isSubmitting ? 'Sending...' : 'Send Message' }}
+        </button>
+        <p class="submit-message" *ngIf="submitMessage">{{ submitMessage }}</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>&copy; 2026 R Abirami. All Rights Reserved.</p>
+</footer>
