@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Full-Stack Portfolio Starter
 
 This workspace now contains a starter portfolio website with:
@@ -78,3 +79,7 @@ Your original HTML used an image and a PDF resume. In Angular, you can place the
 - `frontend/src/assets/resume.pdf`
 
 Then update the template to point to those asset paths if you want them displayed.
+=======
+# Abirami-full-stack-portfolio
+Responsive full-stack portfolio website using Angular, Spring Boot, REST API, and MySQL.
+>>>>>>> 29b6e8e370be9b0b60e5a5290d57d53a6cb85938
